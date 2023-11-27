@@ -5,13 +5,20 @@ using UnityEngine;
 
 public class MovimientoPersonaje : MonoBehaviour
 {
+    public static MovimientoPersonaje instancia;
+    public Vector3 posicionActual;
     public float velocidad;
     public Vector3 direccionMovimiento;
 
     public Animator animator;
 
+    private void Awake()
+    {
+        instancia = this;
+    }
     void Update()
     {
+        posicionActual = transform.position;
         CalcularDireccion();
         if(GestorControles.instancia.controlTeclado && Input.GetKeyDown(KeyCode.Space))
         {
