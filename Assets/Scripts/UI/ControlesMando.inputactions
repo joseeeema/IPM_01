@@ -1,0 +1,74 @@
+{
+    "name": "ControlesMando",
+    "maps": [
+        {
+            "name": "ControlesGamepad",
+            "id": "bdc61c0b-8507-442e-b7c0-36c739cf5275",
+            "actions": [
+                {
+                    "name": "Inventario",
+                    "type": "Button",
+                    "id": "488e0835-94c8-497d-9613-2c0ea3e885cb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Controles",
+                    "type": "Button",
+                    "id": "5375b221-4ddd-4458-aede-380709bf14db",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Opciones",
+                    "type": "Button",
+                    "id": "9757f4fd-368d-42c5-a250-34d2eb75b9f0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9aa98ed9-4bb5-4776-850e-97b8f7a35dc3",
+                    "path": "<DualShockGamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inventario",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "583024be-2071-4660-95da-65c4ec0b3354",
+                    "path": "<DualShockGamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Controles",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "70d6c66e-4068-4cfc-9927-1591cab3fe77",
+                    "path": "<DualShockGamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Opciones",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
