@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class UI_Controles : MonoBehaviour
 {
+
+    public static UI_Controles instance;
+
     public TMP_Text controlInventario;
     public TMP_Text controlControles;
     public TMP_Text controlOpciones;
@@ -17,9 +20,11 @@ public class UI_Controles : MonoBehaviour
 
     public EventSystem controlador;
     public GameObject botonDefecto;
+    public bool activeControls= false;
 
     private void Awake()
     {
+        instance = this;
         controlesMando = new ControlesMando();
         controlesMando.Enable();
         controlesMando.ControlesGamepad.Controles.performed += ctx => ComprobarControles();
@@ -30,8 +35,9 @@ public class UI_Controles : MonoBehaviour
     {
           if(Input.GetKeyDown(KeyCode.Q)&&GestorControles.instancia.controlTeclado)
           {
-              MostrarMenu();
-          }
+            MostrarMenu();
+           
+        }
      
     }
 
@@ -49,7 +55,6 @@ public class UI_Controles : MonoBehaviour
     {
         // Modificar el texto con los controles
         controlInventario.text = "L1 - Abrir inventario";
-        controlControles.text = "L2 - Menu de controles";
         controlOpciones.text = "R1 - Menu de opciones";
 
         // Modificar variables globales
@@ -60,8 +65,7 @@ public class UI_Controles : MonoBehaviour
     public void CambiarControlATeclado()
     {
         // Modificar el texto con los controles
-        controlInventario.text = "Tab - Abrir inventario";
-        controlControles.text = "Q - Menu de controles";
+        controlInventario.text = "I - Abrir inventario";
         controlOpciones.text = "E - Menu de opciones";
 
         // Modificar variables globales
@@ -71,25 +75,23 @@ public class UI_Controles : MonoBehaviour
 
     public void OcultarMenu()
     {
+        activeControls = false;
         panelControles.SetActive(false);
         GestorControles.instancia.IniciarJuego();
     }
 
     public void MostrarMenu()
     {
-      
-        if(!GestorControles.instancia.juegoDetenido)
+        activeControls = true;
+        panelControles.SetActive(true);
+        UI_Opciones.instance.panel.SetActive(false);
+        if (GestorControles.instancia.controlMando)
         {
-            panelControles.SetActive(true);
-            if (GestorControles.instancia.controlMando)
-            {
-                controlador.firstSelectedGameObject = botonDefecto;
-                botonDefecto.GetComponent<Button>().Select();
-            }
-            GestorControles.instancia.DetenerJuego();
+            controlador.firstSelectedGameObject = botonDefecto;
+            botonDefecto.GetComponent<Button>().Select();
         }
-        }
-
+        GestorControles.instancia.DetenerJuego();
+    }
     
 
 }

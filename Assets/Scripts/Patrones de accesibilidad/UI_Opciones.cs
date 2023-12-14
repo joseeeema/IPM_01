@@ -26,10 +26,11 @@ public class UI_Opciones : MonoBehaviour
 
     public EventSystem controlador;
     public GameObject botonDefecto;
-    public int contador = 0;
+    public bool activeOptions= false;
 
     private void Awake()
     {
+        instance = this;
         controlesMando = new ControlesMando();
         controlesMando.Enable();
         controlesMando.ControlesGamepad.Opciones.performed += ctx => ComprobarOpciones();
@@ -41,12 +42,17 @@ public class UI_Opciones : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape)&& GestorControles.instancia.controlTeclado)
         {
-            MostrarOpciones();
-            contador++;
-            if (Input.GetKeyDown(KeyCode.Escape)&&contador>1) {
-                Salir();
-                contador=0;
+            if (activeOptions == false) { 
+                MostrarOpciones();
             }
+            else {
+                Salir();
+            } 
+            if (UI_Controles.instance.activeControls==true) {
+                UI_Controles.instance.OcultarMenu();
+                MostrarOpciones();
+            }
+            
         }
     }
 
@@ -60,7 +66,8 @@ public class UI_Opciones : MonoBehaviour
 
     public void MostrarOpciones()
     {
-        if(!GestorControles.instancia.juegoDetenido)
+        activeOptions = true;
+        if (!GestorControles.instancia.juegoDetenido)
         {
             panel.SetActive(true);
             if (GestorControles.instancia.controlMando)
@@ -102,6 +109,7 @@ public class UI_Opciones : MonoBehaviour
 
     public void Salir()
     {
+        activeOptions = false;
         panel.SetActive(false);
         GestorControles.instancia.IniciarJuego();
     }
