@@ -25,6 +25,7 @@ public class UI_Opciones : MonoBehaviour
 
     public EventSystem controlador;
     public GameObject botonDefecto;
+    public int contador = 0;
 
     private void Awake()
     {
@@ -37,9 +38,14 @@ public class UI_Opciones : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && GestorControles.instancia.controlTeclado)
+        if (Input.GetKeyDown(KeyCode.Escape)&& GestorControles.instancia.controlTeclado)
         {
             MostrarOpciones();
+            contador++;
+            if (Input.GetKeyDown(KeyCode.Escape)&&contador>1) {
+                Salir();
+                contador=0;
+            }
         }
     }
 

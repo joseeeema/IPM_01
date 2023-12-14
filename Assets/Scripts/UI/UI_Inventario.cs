@@ -17,7 +17,7 @@ public class UI_Inventario : MonoBehaviour
 
     public EventSystem controlador;
     public GameObject botonDefecto;
-
+    public int contador=0;
     private void Awake()
     {
         instancia = this;
@@ -32,9 +32,14 @@ public class UI_Inventario : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab)&&GestorControles.instancia.controlTeclado)
+        if(Input.GetKeyDown(KeyCode.I)&&GestorControles.instancia.controlTeclado)
         {
             MostrarInventario();
+            contador++;
+            if (Input.GetKeyDown(KeyCode.I) && contador > 1) {
+                OcultarInventario();
+                contador = 0;
+            }
         }
     }
 

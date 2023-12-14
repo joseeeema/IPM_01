@@ -28,11 +28,14 @@ public class UI_Controles : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q)&&GestorControles.instancia.controlTeclado)
-        {
-            MostrarMenu();
-        }
+          if(Input.GetKeyDown(KeyCode.Q)&&GestorControles.instancia.controlTeclado)
+          {
+              MostrarMenu();
+          }
+     
     }
+
+
 
     public void ComprobarControles()
     {
@@ -74,6 +77,7 @@ public class UI_Controles : MonoBehaviour
 
     public void MostrarMenu()
     {
+      
         if(!GestorControles.instancia.juegoDetenido)
         {
             panelControles.SetActive(true);
@@ -84,5 +88,8 @@ public class UI_Controles : MonoBehaviour
             }
             GestorControles.instancia.DetenerJuego();
         }
-    }
+        }
+
+    
+
 }
