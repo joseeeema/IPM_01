@@ -16,6 +16,7 @@ public class UI_Nave : MonoBehaviour
     public GameObject botonDefecto;
 
     public string[] nombrePiezas;
+    bool active = false;
 
     private void Awake()
     {
@@ -28,7 +29,14 @@ public class UI_Nave : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z) && GestorControles.instancia.controlTeclado)
         {
-            MostrarMenu();
+            if (active == false)
+            {
+                MostrarMenu();
+            }
+            else {
+                Salir();
+            }
+            
         }
     }
 
@@ -53,13 +61,15 @@ public class UI_Nave : MonoBehaviour
 
     public void Salir()
     {
+        active = false;
         panel.SetActive(false);
         GestorControles.instancia.IniciarJuego();
     }
 
     public void MostrarMenu()
     {
-        if(!GestorControles.instancia.juegoDetenido)
+        active = true;
+        if (!GestorControles.instancia.juegoDetenido)
         {
             panel.SetActive(true);
             if (GestorControles.instancia.controlMando)
