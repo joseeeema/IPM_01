@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+
 public class UI_Opciones : MonoBehaviour
 {
     public static UI_Opciones instance;
@@ -143,4 +144,5 @@ public class UI_Opciones : MonoBehaviour
                 return;
         }
     }
+
 }
