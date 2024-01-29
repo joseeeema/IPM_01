@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4abc187cda951804ebc8aa41ae93f10e
+guid: b9834441c0ebb074987e5e46244aeac2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4537822490382052025
-    second: Pantalla_Inicio_0
+      213: -4339714457105660999
+    second: zanahoria2_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pantalla_Inicio_0
+      name: zanahoria2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 270
-        height: 270
+        x: 733
+        y: 376
+        width: 453
+        height: 505
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ba2009338599fe30800000000000000
-      internalID: 4537822490382052025
+      spriteID: 9b3079da1bc36c3c0800000000000000
+      internalID: -4339714457105660999
       vertices: []
       indices: 
       edges: []
@@ -128,8 +128,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Pantalla_Inicio_0: 4537822490382052025
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

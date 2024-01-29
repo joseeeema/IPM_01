@@ -19,7 +19,11 @@ public class Recolectable : MonoBehaviour
 
         if(jugador!=null)
         {
-            jugador.gestorInventario.AñadirObjeto(this);
+            for(int i=0; i<50; i++)
+            {
+                jugador.gestorInventario.AñadirObjeto(this);
+            }
+            UI_Dialogos.instance.MostrarDialogo(8);
             UI_Inventario.instancia.aviso.SetActive(true);
             Destroy(gameObject);
         }
@@ -28,5 +32,5 @@ public class Recolectable : MonoBehaviour
 
 public enum TipoObjeto
 {
-    NULL, SEMILLAS_PATATAS, PATATAS
+    NULL, SEMILLAS_PATATAS, PATATAS, TOMATES
 }

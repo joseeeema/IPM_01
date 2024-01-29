@@ -48,7 +48,7 @@ public class UI_Opciones : MonoBehaviour
             else {
                 Salir();
             } 
-            if (UI_Controles.instance.activeControls==true) {
+            if (UI_Controles.instance.activeControls == true) {
                 UI_Controles.instance.OcultarMenu();
                 MostrarOpciones();
             }

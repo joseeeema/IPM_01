@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PersonajeInteractuable : MonoBehaviour
+public class Comprador : MonoBehaviour
 {
     public float rango;
     public GameObject iconoTexto;
     public bool interactuable;
-    public GameObject panelPiezas;
+    public GameObject panelCultivos;
 
     // Start is called before the first frame update
     void Start()
@@ -19,19 +19,19 @@ public class PersonajeInteractuable : MonoBehaviour
     void Update()
     {
         ComprobarInteractuable();
-        if(Input.GetKeyDown(KeyCode.Space) )
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(interactuable)
+            if (interactuable)
             {
-                UI_Dialogos.instance.MostrarDialogo(4);
-                panelPiezas.SetActive(true);
+                UI_Dialogos.instance.MostrarDialogo(11);
+                panelCultivos.SetActive(true);
             }
         }
     }
 
     public void ComprobarInteractuable()
     {
-        if(Vector3.Distance(transform.position, MovimientoPersonaje.instancia.posicionActual)<=rango)
+        if (Vector3.Distance(transform.position, MovimientoPersonaje.instancia.posicionActual) <= rango)
         {
             interactuable = true;
             iconoTexto.SetActive(true);
@@ -45,6 +45,6 @@ public class PersonajeInteractuable : MonoBehaviour
 
     public void Salir()
     {
-        panelPiezas.SetActive(false);
+        panelCultivos.SetActive(false);
     }
 }

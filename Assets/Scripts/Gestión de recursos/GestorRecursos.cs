@@ -9,13 +9,14 @@ public class GestorRecursos : MonoBehaviour
     public List<Vector3Int> posicionesCultivos = new List<Vector3Int>();
 
     public GameObject cultivoPatata;
+    public GameObject cultivoTomate;
 
     private void Awake()
     {
         instancia = this;
     }
 
-    public void PlantarCultivo(Vector3Int cultivo)
+    public int PlantarCultivo(Vector3Int cultivo)
     {
         Vector3 posicion = new Vector3(cultivo.x + 0.5f, cultivo.y + 0.75f, cultivo.z);
         foreach(var c in posicionesCultivos)
@@ -23,13 +24,27 @@ public class GestorRecursos : MonoBehaviour
             // Esto significa que hay un cultivo ya en esta posición
             if (c.Equals(cultivo)) {
                 UI_Dialogos.instance.MostrarDialogo(3);
-                return;
+                return 0;
             } 
         }
-        GameObject patata = Instantiate(cultivoPatata, posicion, Quaternion.identity);
-        Cultivos p = patata.gameObject.GetComponent<Cultivos>();
-        p.posicionTile = cultivo;
-        posicionesCultivos.Add(cultivo);
+        int numRandom = Random.Range(0, 10);
+        if(numRandom<7)
+        {
+            GameObject patata = Instantiate(cultivoPatata, posicion, Quaternion.identity);
+            Cultivos p = patata.gameObject.GetComponent<Cultivos>();
+            p.posicionTile = cultivo;
+            posicionesCultivos.Add(cultivo);
+        }
+        else
+        {
+            GameObject tomate = Instantiate(cultivoTomate, posicion, Quaternion.identity);
+            Cultivos2 t = tomate.gameObject.GetComponent<Cultivos2>();
+            t.posicionTile = cultivo;
+            posicionesCultivos.Add(cultivo);
+        }
+
+
+        return -1;
     }
 
     public void RecogerCultivo(Vector3Int cultivo)
@@ -39,7 +54,7 @@ public class GestorRecursos : MonoBehaviour
             if(c.Equals(cultivo))
             {
                 posicionesCultivos.Remove(c);
-                posicionesCultivos.Sort();
+                //posicionesCultivos.Sort();
                 return;
             }
         }

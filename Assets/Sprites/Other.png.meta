@@ -296,7 +296,7 @@ TextureImporter:
         x: 145
         y: 1
         width: 14
-        height: 30
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,7 +317,7 @@ TextureImporter:
         x: 160
         y: 1
         width: 16
-        height: 26
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -487,7 +487,7 @@ TextureImporter:
         width: 17
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -495,6 +495,27 @@ TextureImporter:
       bones: []
       spriteID: f3541993cdd982d41aea25ff332b4858
       internalID: 1992160425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other_17
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93230af3bcbdeb4d859675ddd6f8d3a
+      internalID: 2118414545
       vertices: []
       indices: 
       edges: []
@@ -519,6 +540,7 @@ TextureImporter:
       Other_14: -811477845
       Other_15: 1070729891
       Other_16: 1992160425
+      Other_17: 2118414545
       Other_2: -1239754875
       Other_3: 632555363
       Other_4: -1639916956

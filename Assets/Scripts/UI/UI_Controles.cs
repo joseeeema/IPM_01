@@ -20,7 +20,7 @@ public class UI_Controles : MonoBehaviour
 
     public EventSystem controlador;
     public GameObject botonDefecto;
-    public bool activeControls= false;
+    public bool activeControls = false;
 
     private void Awake()
     {

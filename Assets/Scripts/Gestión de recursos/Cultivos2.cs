@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cultivos : MonoBehaviour
+public class Cultivos2 : MonoBehaviour
 {
     public TipoObjeto tipo;
     public Sprite icono;
@@ -10,11 +10,11 @@ public class Cultivos : MonoBehaviour
     public GameObject estado1, estado2, estado3, estado4, estado5, estado6;
     public int segundoInicial;
     public int numSegundos;
-    public const int cambio1 = 12;
-    public const int cambio2 = 24;
-    public const int cambio3 = 36;
-    public const int cambio4 = 48;
-    public const int cambio5 = 60;
+    public const int cambio1 = 15;
+    public const int cambio2 = 30;
+    public const int cambio3 = 45;
+    public const int cambio4 = 60;
+    public const int cambio5 = 80;
     public bool sePuedeRecoger = false;
 
     public Vector3Int posicionTile;
@@ -28,7 +28,7 @@ public class Cultivos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(numSegundos <= 60)
+        if(numSegundos <= 80)
         {
             CalcularTiempo();
             CambiarSprite();

@@ -76,7 +76,27 @@ public class GestorTiles : MonoBehaviour
         else
         {
             // Se planta un cultivo
-            GestorRecursos.instancia.PlantarCultivo(posicion);
+            bool encontrado = false;
+            var lotes = Inventario.instance.gestorInventario.lotes;
+            foreach (GestorInventario.Lote l in lotes)
+            {
+                if (l.tipo == TipoObjeto.SEMILLAS_PATATAS)
+                {
+                    if (l.numero > 0)
+                    {
+                        l.numero += GestorRecursos.instancia.PlantarCultivo(posicion); 
+                    }
+                    else
+                    {
+                        UI_Dialogos.instance.MostrarDialogo(9);
+                    }
+                    encontrado = true;
+                }
+            }
+            if(!encontrado)
+            {
+                UI_Dialogos.instance.MostrarDialogo(10);
+            }
         }
     }
 
@@ -85,10 +105,10 @@ public class GestorTiles : MonoBehaviour
         areaInteractuable.SetTile(posicion, tierraInicial);
         foreach(Vector3Int v in casillasAradas)
         {
-            if(v.Equals(posicion))
+            if(v==posicion)
             {
                 casillasAradas.Remove(v);
-                casillasAradas.Sort();
+                //casillasAradas.Sort();
                 return;
             }
         }
