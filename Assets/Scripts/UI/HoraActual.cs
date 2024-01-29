@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HoraActual : MonoBehaviour
 {
@@ -28,9 +29,22 @@ public class HoraActual : MonoBehaviour
 
         CalcularTiempo();
         TransformarMinutos();
+
+        if(numMinutos >= 10)
+        {
+            StartCoroutine(FinJuego());
+        }
     }
 
-    public void CalcularTiempo()
+    IEnumerator FinJuego()
+    {
+        UI_Dialogos.instance.MostrarDialogo(14);
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(3);
+
+    }
+
+public void CalcularTiempo()
     {
         if(System.DateTime.Now.Second == segundoInicial && minutoInicial != System.DateTime.Now.Minute)
         {

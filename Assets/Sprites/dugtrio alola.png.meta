@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dugtrio alola_0: 8411418367709076743
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

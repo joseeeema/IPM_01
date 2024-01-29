@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GestorRecursos : MonoBehaviour
 {
@@ -59,4 +60,28 @@ public class GestorRecursos : MonoBehaviour
             }
         }
     }
+
+    private void Update()
+    {
+        var lotes = Inventario.instance.gestorInventario.lotes;
+        foreach (GestorInventario.Lote l in lotes)
+        {
+            if (l.tipo == TipoObjeto.SEMILLAS_PATATAS)
+            {
+                if (l.numero <= 0)
+                {
+                    StartCoroutine(FinJuego());
+                }
+              
+            }
+        }
+    }
+
+    IEnumerator FinJuego()
+    {
+        UI_Dialogos.instance.MostrarDialogo(13);
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(3);
+
+    } 
 }

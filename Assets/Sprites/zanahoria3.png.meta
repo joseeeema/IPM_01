@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zanahoria3_0: -4474031596412107845
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

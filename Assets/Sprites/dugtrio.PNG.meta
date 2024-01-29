@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dugtrio_0: 7151435796289098838
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

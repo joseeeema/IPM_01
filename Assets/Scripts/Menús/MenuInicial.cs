@@ -12,7 +12,7 @@ public class MenuInicial : MonoBehaviour
     }
     public void Jugar()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(4);
     }
     public void Salir()
     {
