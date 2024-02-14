@@ -24,6 +24,11 @@ public class PersonajeInteractuable : MonoBehaviour
             if(interactuable)
             {
                 UI_Dialogos.instance.MostrarDialogo(4);
+                if(UI_Objetivos.instance.hablarPiezas==1)
+                {
+                    UI_Objetivos.instance.hablarPiezas++;
+                    UI_Objetivos.instance.avisosVisuales[2].SetActive(false);
+                }
                 panelPiezas.SetActive(true);
             }
         }

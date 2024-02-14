@@ -23,6 +23,11 @@ public class Comprador : MonoBehaviour
         {
             if (interactuable)
             {
+                if(UI_Objetivos.instance.hablarVendedor==1)
+                {
+                    UI_Objetivos.instance.hablarVendedor++;
+                    UI_Objetivos.instance.CambiarObjetivo(3);
+                }
                 UI_Dialogos.instance.MostrarDialogo(11);
                 panelCultivos.SetActive(true);
             }

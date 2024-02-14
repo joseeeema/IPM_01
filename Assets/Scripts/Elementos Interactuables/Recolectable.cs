@@ -25,6 +25,7 @@ public class Recolectable : MonoBehaviour
             }
             UI_Dialogos.instance.MostrarDialogo(8);
             UI_Inventario.instancia.aviso.SetActive(true);
+            UI_Objetivos.instance.CambiarObjetivo(0);
             Destroy(gameObject);
         }
     }

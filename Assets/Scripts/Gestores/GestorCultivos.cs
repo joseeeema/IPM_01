@@ -139,6 +139,56 @@ public class GestorCultivos : MonoBehaviour
         }
     }
 
+    public void Intercambiar3Patatas()
+    {
+        var lotes = Inventario.instance.gestorInventario.lotes;
+        foreach (GestorInventario.Lote l in lotes)
+        {
+            if (l.tipo == TipoObjeto.PATATAS)
+            {
+                if (l.numero > 2)
+                {
+                    numPatatas -= 3;
+                    l.numero = numPatatas;
+                    if(HoraActual.instance.numMinutos>=1)
+                    {
+                        HoraActual.instance.numMinutos = HoraActual.instance.numMinutos - 0.5f;
+                        HoraActual.instance.CambioSlider();
+                    }
+                }
+                else
+                {
+                    UI_Dialogos.instance.MostrarDialogo(6);
+                }
+            }
+        }
+    }
+
+    public void Intercambiar3Tomates()
+    {
+        var lotes = Inventario.instance.gestorInventario.lotes;
+        foreach (GestorInventario.Lote l in lotes)
+        {
+            if (l.tipo == TipoObjeto.TOMATES)
+            {
+                if (l.numero > 2)
+                {
+                    numTomates -= 3;
+                    l.numero = numTomates;
+                    if(HoraActual.instance.numMinutos>=0.5)
+                    {
+                        HoraActual.instance.numMinutos = HoraActual.instance.numMinutos - 1f;
+                        HoraActual.instance.CambioSlider();
+                    }
+                }
+                else
+                {
+                    UI_Dialogos.instance.MostrarDialogo(7);
+                }
+            }
+        }
+    }
+
     public void Salir()
     {
         panelCultivos.SetActive(false);

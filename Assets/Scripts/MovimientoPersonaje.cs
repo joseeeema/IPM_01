@@ -10,6 +10,8 @@ public class MovimientoPersonaje : MonoBehaviour
     public float velocidad;
     public Vector3 direccionMovimiento;
 
+    private bool tutorial = false;
+
     public Animator animator;
 
     private void Awake()
@@ -31,6 +33,11 @@ public class MovimientoPersonaje : MonoBehaviour
         Vector3Int posicion = new Vector3Int((int)transform.position.x - 1, (int)transform.position.y, 0);
         if(GestorTiles.instancia.esInteractuable())
         {
+            if(!tutorial)
+            {
+                tutorial = true;
+                UI_Objetivos.instance.CambiarObjetivo(1);
+            }
             GestorTiles.instancia.SetInteractuado(posicion);
             Debug.Log("Es interactuable");
         }

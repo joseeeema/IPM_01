@@ -68,6 +68,12 @@ public class Cultivos2 : MonoBehaviour
                 estado5.SetActive(false);
                 estado6.SetActive(true);
                 sePuedeRecoger = true;
+                if (!UI_Objetivos.instance.primerCultivo)
+                {
+                    UI_Objetivos.instance.CambiarObjetivo(2);
+                    UI_Dialogos.instance.MostrarDialogo(16);
+                    UI_Objetivos.instance.primerCultivo = true;
+                }
                 break;
         }
     }
