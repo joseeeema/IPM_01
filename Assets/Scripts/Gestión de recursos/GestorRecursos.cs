@@ -12,6 +12,8 @@ public class GestorRecursos : MonoBehaviour
     public GameObject cultivoPatata;
     public GameObject cultivoTomate;
 
+    public int probabilidad = 7;
+
     private void Awake()
     {
         instancia = this;
@@ -29,7 +31,7 @@ public class GestorRecursos : MonoBehaviour
             } 
         }
         int numRandom = Random.Range(0, 10);
-        if(numRandom<7)
+        if(numRandom<probabilidad)
         {
             GameObject patata = Instantiate(cultivoPatata, posicion, Quaternion.identity);
             Cultivos p = patata.gameObject.GetComponent<Cultivos>();

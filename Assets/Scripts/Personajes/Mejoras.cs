@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Comprador : MonoBehaviour
+public class Mejoras : MonoBehaviour
 {
     public float rango;
     public GameObject iconoTexto;
     public bool interactuable;
-    public GameObject panelMejoras;
+    public GameObject panelCultivos;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class Comprador : MonoBehaviour
                     UI_Objetivos.instance.CambiarObjetivo(3);
                 }
                 UI_Dialogos.instance.MostrarDialogo(11);
-                panelMejoras.SetActive(true);
+                panelCultivos.SetActive(true);
             }
         }
     }
@@ -48,8 +48,25 @@ public class Comprador : MonoBehaviour
         }
     }
 
+    public void CambiarProbabilidad()
+    {
+        if(Inventario.instance.dinero >= 20 && GestorRecursos.instancia.probabilidad>1)
+        {
+            Inventario.instance.AumentarDinero(-20);
+            GestorRecursos.instancia.probabilidad -= 2;
+            UI_Dialogos.instance.MostrarDialogo(18);
+        }
+        else
+        {
+            UI_Dialogos.instance.MostrarDialogo(19);
+        }
+    }
+
+
+
+
     public void Salir()
     {
-        panelMejoras.SetActive(false);
+        panelCultivos.SetActive(false);
     }
 }
