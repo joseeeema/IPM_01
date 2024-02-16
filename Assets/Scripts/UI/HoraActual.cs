@@ -10,7 +10,7 @@ public class HoraActual : MonoBehaviour
     public static HoraActual instance;
 
     public float numMinutos = 0;
-    public const int maxMinutos = 5;
+    public const int maxMinutos = 7;
     private int segundoInicial;
     private int minutoActual;
 

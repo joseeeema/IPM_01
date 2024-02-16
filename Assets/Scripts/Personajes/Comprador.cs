@@ -7,7 +7,7 @@ public class Comprador : MonoBehaviour
     public float rango;
     public GameObject iconoTexto;
     public bool interactuable;
-    public GameObject panelMejoras;
+    public GameObject panelCultivos;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class Comprador : MonoBehaviour
                     UI_Objetivos.instance.CambiarObjetivo(3);
                 }
                 UI_Dialogos.instance.MostrarDialogo(11);
-                panelMejoras.SetActive(true);
+                panelCultivos.SetActive(true);
             }
         }
     }
@@ -50,6 +50,6 @@ public class Comprador : MonoBehaviour
 
     public void Salir()
     {
-        panelMejoras.SetActive(false);
+        panelCultivos.SetActive(false);
     }
 }

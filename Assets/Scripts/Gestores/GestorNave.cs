@@ -59,9 +59,9 @@ public class GestorNave : MonoBehaviour
 
     public void ComprarPieza(int id)
     {
-        if(Inventario.instance.dinero >= 100)
+        if(Inventario.instance.dinero >= 80)
         {
-            Inventario.instance.AumentarDinero(-100);
+            Inventario.instance.AumentarDinero(-80);
             piezasTienda[0].SetActive(false);
             PiezaConseguida(1);
             // WIN CONDITION

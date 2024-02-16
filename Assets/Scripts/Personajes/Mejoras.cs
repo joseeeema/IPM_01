@@ -28,7 +28,7 @@ public class Mejoras : MonoBehaviour
                     UI_Objetivos.instance.hablarVendedor++;
                     UI_Objetivos.instance.CambiarObjetivo(3);
                 }
-                UI_Dialogos.instance.MostrarDialogo(11);
+                UI_Dialogos.instance.MostrarDialogo(17);
                 panelCultivos.SetActive(true);
             }
         }
